@@ -28,8 +28,8 @@ const Note = ({ note, refetch }) => {
                     <h3 className={`text-slate-900 font-bold ${show && "line-through"}`}>{title}</h3>
                     <span onClick={() => handleDelete(_id)} className='transition ease-in-out delay-15 hover:text-white duration-500'><RiDeleteBin5Line className='text-red-500 text-xl' title='Delete' /></span>
                 </div>
-                <p className={`text-slate-900  ${show && "line-through"}`}>{description}</p>
-                <div class="card-actions justify-end">
+                <p className={`text-slate-900 text-left  ${show && "line-through"}`}>{description}</p>
+                <div class="card-actions justify-end mt-12">
                     <button onClick={() => { setShow(true) }} class="btn btn-primary btn-sm bg-slate-500 transition ease-in-out delay-15 hover:text-white hover:bg-blue-500 border-none rounded-md duration-500">Complete</button>
                 </div>
             </div>

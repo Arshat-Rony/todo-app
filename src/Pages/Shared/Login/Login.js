@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ImFacebook } from "react-icons/im"
 import { BsGoogle } from "react-icons/bs"
 import { useForm } from "react-hook-form";
@@ -25,17 +25,19 @@ const Login = () => {
         signError = <p className='text-red-500 font-bold'>{emailerror.message || emailerror.message}</p>
     }
 
-    if (guser || emailuser) {
-        toast("Welcome to Take Note")
-        navigate(from, { replace: true })
-    }
+    useEffect(() => {
+        if (guser || emailuser) {
+            toast("Welcome to Take Note")
+            navigate(from, { replace: true })
+        }
+    }, [navigate, from, emailuser, guser])
 
     if (gloading || emailLoading) {
         return <Loading type="spokes" color="#EB4B98" ></Loading>
     }
 
     const onSubmit = data => {
-        signInWithEmailAndPassword()
+        signInWithEmailAndPassword(data.email, data.password)
         console.log(data)
     };
 
