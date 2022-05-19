@@ -3,12 +3,12 @@ import { getAuth } from 'firebase/auth'
 
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBU7S7tJpC7w1dukHjuwnV1UlKheSsihQk",
-    authDomain: "todo-app-9a63e.firebaseapp.com",
-    projectId: "todo-app-9a63e",
-    storageBucket: "todo-app-9a63e.appspot.com",
-    messagingSenderId: "550038875277",
-    appId: "1:550038875277:web:4ab8400e5409fc3e6906c4"
+    apiKey: process.env.REACT_APP_API_KEY,
+    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+    appId: process.env.REACT_APP_APP_ID,
 };
 
 export const app = initializeApp(firebaseConfig);
